@@ -1,0 +1,52 @@
+name: development
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  macos:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test --enable-code-coverage --enable-test-discovery --sanitize=thread
+    - name: Generate documentation
+      uses: steven0351/publish-jazzy-docs@v1
+      with:
+        personal_access_token: ${{ secrets.ACCESS_TOKEN }}
+        args: "--theme fullwidth"
+  ubuntu-bionic:
+    runs-on: ubuntu-latest
+    container:
+      image: swift:5.3-bionic
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test --enable-code-coverage --enable-test-discovery --sanitize=thread
+    - name: Generate coverage report
+      run: llvm-cov export -format="lcov" .build/debug/chaqmoq-resolverPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+    - name: Upload to codecov.io
+      uses: codecov/codecov-action@v1.0.3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        flags: base64,unittests
+        file: coverage.lcov
+  ubuntu-xenial:
+    runs-on: ubuntu-latest
+    container:
+      image: swift:5.3-xenial
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test --enable-code-coverage --enable-test-discovery --sanitize=thread

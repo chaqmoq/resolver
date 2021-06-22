@@ -20,8 +20,8 @@ extension Resolver {
         name: String? = nil,
         serviceFactory: @escaping (Arguments) -> Service
     ) {
-        let key = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
-        serviceFactories[key] = serviceFactory
+        let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
+        serviceFactories[serviceKey] = serviceFactory
     }
 }
 
@@ -43,7 +43,7 @@ extension Resolver {
         name: String? = nil,
         serviceFactory: @escaping ((Arguments) -> Service) -> Any
     ) -> Any? {
-        let key = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
-        return serviceFactories[key]
+        let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
+        return serviceFactories[serviceKey]
     }
 }

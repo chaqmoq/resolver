@@ -24,3 +24,26 @@ extension Resolver {
         serviceFactories[key] = serviceFactory
     }
 }
+
+extension Resolver {
+    public func resolve<Service>(
+        _ serviceType: Service.Type,
+        name: String? = nil
+    ) -> Service? {
+        typealias ServiceFactoryType = ((Resolver)) -> Service
+        let serviceFactory = _resolve(serviceType, name: name) {
+            (serviceFactory: ServiceFactoryType) in serviceFactory((self))
+        }
+
+        return (serviceFactory as? ServiceFactoryType)?((self))
+    }
+
+    func _resolve<Service, Arguments>(
+        _ serviceType: Service.Type,
+        name: String? = nil,
+        serviceFactory: @escaping ((Arguments) -> Service) -> Any
+    ) -> Any? {
+        let key = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
+        return serviceFactories[key]
+    }
+}

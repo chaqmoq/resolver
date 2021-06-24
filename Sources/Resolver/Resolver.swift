@@ -31,11 +31,12 @@ extension Resolver {
         name: String? = nil
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver)) -> Service
+        let arguments = (self)
         let serviceFactory = _resolve(serviceType, name: name) {
-            (serviceFactory: ServiceFactoryType) in serviceFactory((self))
+            (serviceFactory: ServiceFactoryType) in serviceFactory(arguments)
         }
 
-        return (serviceFactory as? ServiceFactoryType)?((self))
+        return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
 
     func _resolve<Service, Arguments>(

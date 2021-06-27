@@ -1,9 +1,12 @@
-struct ServiceKey: Hashable {
-    let serviceType: Any.Type
-    let name: String?
-    let argumentsType: Any.Type?
+typealias ServiceType = Any.Type
+typealias ArgumentsType = Any.Type
 
-    init(serviceType: Any.Type, name: String? = nil, argumentsType: Any.Type? = nil) {
+struct ServiceKey: Hashable {
+    let serviceType: ServiceType
+    let name: String?
+    let argumentsType: ArgumentsType?
+
+    init(serviceType: ServiceType, name: String? = nil, argumentsType: ArgumentsType? = nil) {
         self.serviceType = serviceType
         self.name = name
         self.argumentsType = argumentsType

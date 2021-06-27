@@ -10,14 +10,16 @@ extension Resolver {
     public func register<Service>(
         _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
+        scoped scope: Scope = .graph,
         serviceFactory: @escaping (Resolver) -> Service
     ) {
-        _register(serviceType, named: name, serviceFactory: serviceFactory)
+        _register(serviceType, named: name, scoped: scope, serviceFactory: serviceFactory)
     }
 
     func _register<Service, Arguments>(
         _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
+        scoped scope: Scope = .graph,
         serviceFactory: @escaping (Arguments) -> Service
     ) {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)

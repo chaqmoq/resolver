@@ -28,9 +28,9 @@ final class Dog: Animal {
 final class ResolverTests: XCTestCase {
     func test1() {
         let resolver = Resolver()
-        resolver.register(Animal.self, name: "animal") { (_, name, age) in Dog(name: name, age: age) }
+        resolver.register(Animal.self, named: "animal") { (_, name, age) in Dog(name: name, age: age) }
 
-        let dog = resolver.resolve(Animal.self, name: "animal", arguments: "Qoplon", 1) as! Dog
+        let dog = resolver.resolve(Animal.self, named: "animal", arguments: "Qoplon", 1) as! Dog
         XCTAssertEqual(dog.name, "Qoplon")
         XCTAssertEqual(dog.age, 1)
     }

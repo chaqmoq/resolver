@@ -9,15 +9,15 @@ public final class Resolver {
 extension Resolver {
     public func register<Service>(
         _ serviceType: Service.Type = Service.self,
-        name: String? = nil,
+        named name: String? = nil,
         serviceFactory: @escaping (Resolver) -> Service
     ) {
-        _register(serviceType, name: name, serviceFactory: serviceFactory)
+        _register(serviceType, named: name, serviceFactory: serviceFactory)
     }
 
     func _register<Service, Arguments>(
         _ serviceType: Service.Type = Service.self,
-        name: String? = nil,
+        named name: String? = nil,
         serviceFactory: @escaping (Arguments) -> Service
     ) {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
@@ -28,11 +28,11 @@ extension Resolver {
 extension Resolver {
     public func resolve<Service>(
         _ serviceType: Service.Type,
-        name: String? = nil
+        named name: String? = nil
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver)) -> Service
         let arguments = (self)
-        let serviceFactory = _resolve(serviceType, name: name) {
+        let serviceFactory = _resolve(serviceType, named: name) {
             (serviceFactory: ServiceFactoryType) in serviceFactory(arguments)
         }
 
@@ -41,7 +41,7 @@ extension Resolver {
 
     func _resolve<Service, Arguments>(
         _ serviceType: Service.Type,
-        name: String? = nil,
+        named name: String? = nil,
         serviceFactory: @escaping ((Arguments) -> Service) -> Any
     ) -> Any? {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)

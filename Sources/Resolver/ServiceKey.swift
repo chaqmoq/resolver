@@ -15,7 +15,7 @@ struct ServiceKey: Hashable {
         if let argumentsType = argumentsType { ObjectIdentifier(argumentsType).hash(into: &hasher) }
     }
 
-    static func ==(lhs: ServiceKey, rhs: ServiceKey) -> Bool {
+    static func == (lhs: ServiceKey, rhs: ServiceKey) -> Bool {
         lhs.serviceType == rhs.serviceType && lhs.name == rhs.name && lhs.argumentsType == rhs.argumentsType
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 public final class Resolver {
-    private var serviceFactories: [ServiceKey: Any] = .init()
+    private var serviceRegistrations: [ServiceKey: ServiceRegistrationType] = .init()
 
     public init() {}
 }
@@ -23,7 +23,8 @@ extension Resolver {
         serviceFactory: @escaping (Arguments) -> Service
     ) {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
-        serviceFactories[serviceKey] = serviceFactory
+        let serviceRegistration = ServiceRegistration(scope: scope, serviceFactory: serviceFactory)
+        serviceRegistrations[serviceKey] = serviceRegistration
     }
 }
 
@@ -34,8 +35,8 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver)) -> Service
         let arguments = (self)
-        let serviceFactory = _resolve(serviceType, named: name) {
-            (serviceFactory: ServiceFactoryType) in serviceFactory(arguments)
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
+            serviceFactory(arguments)
         }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
@@ -47,6 +48,6 @@ extension Resolver {
         serviceFactory: @escaping ((Arguments) -> Service) -> Any
     ) -> Any? {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
-        return serviceFactories[serviceKey]
+        return (serviceRegistrations[serviceKey] as? ServiceRegistration)?.serviceFactory
     }
 }

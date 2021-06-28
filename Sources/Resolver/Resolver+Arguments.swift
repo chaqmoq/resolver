@@ -98,9 +98,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1)) -> Service
         let arguments = (self, arg1)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -112,9 +110,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2)) -> Service
         let arguments = (self, arg1, arg2)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -126,9 +122,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3)) -> Service
         let arguments = (self, arg1, arg2, arg3)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -140,9 +134,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -154,9 +146,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -168,9 +158,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -182,9 +170,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -197,9 +183,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -212,9 +196,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }
@@ -227,9 +209,7 @@ extension Resolver {
     ) -> Service? {
         typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in
-            serviceFactory(arguments)
-        }
+        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
 
         return (serviceFactory as? ServiceFactoryType)?(arguments)
     }

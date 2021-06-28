@@ -1,6 +1,6 @@
-typealias ServiceFactoryType = Any
-
 final class ServiceRegistration {
+    typealias ServiceFactoryType = Any
+
     let scope: Scope
     let serviceFactory: ServiceFactoryType
 

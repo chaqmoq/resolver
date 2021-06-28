@@ -1,4 +1,3 @@
-typealias ServiceRegistrationType = Any
 typealias ServiceFactoryType = Any
 
 final class ServiceRegistration {

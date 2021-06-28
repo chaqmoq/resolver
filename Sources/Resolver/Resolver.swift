@@ -1,7 +1,7 @@
 import Foundation
 
 public final class Resolver {
-    private var serviceRegistrations: [ServiceKey: ServiceRegistrationType] = .init()
+    private var serviceRegistrations: [ServiceKey: ServiceRegistration] = .init()
 
     public init() {}
 }
@@ -46,7 +46,7 @@ extension Resolver {
         serviceFactory: @escaping ((Arguments) -> Service) -> Void
     ) -> Service? {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
-        let serviceFactory = (serviceRegistrations[serviceKey] as? ServiceRegistration)?.serviceFactory
+        let serviceFactory = serviceRegistrations[serviceKey]?.serviceFactory
 
         return (serviceFactory as? (Arguments) -> Service)?(arguments as! Arguments)
     }

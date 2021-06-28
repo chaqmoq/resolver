@@ -96,11 +96,10 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1)) -> Service
         let arguments = (self, arg1)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2>(
@@ -108,11 +107,10 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2)) -> Service
         let arguments = (self, arg1, arg2)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3>(
@@ -120,11 +118,10 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3)) -> Service
         let arguments = (self, arg1, arg2, arg3)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4>(
@@ -132,11 +129,10 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(
@@ -144,11 +140,10 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
@@ -156,11 +151,10 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
@@ -168,11 +162,10 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
@@ -181,11 +174,10 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
@@ -194,11 +186,10 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8, _ arg9: Arg9
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
@@ -207,10 +198,9 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8, _ arg9: Arg9, _ arg10: Arg10
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10)) -> Service
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 }

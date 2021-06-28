@@ -33,19 +33,21 @@ extension Resolver {
         _ serviceType: Service.Type,
         named name: String? = nil
     ) -> Service? {
-        typealias ServiceFactoryType = ((Resolver)) -> Service
         let arguments = (self)
-        let serviceFactory = _resolve(serviceType, named: name) { (serviceFactory: ServiceFactoryType) in }
+        typealias ServiceFactoryType = ((Resolver)) -> Service
 
-        return (serviceFactory as? ServiceFactoryType)?(arguments)
+        return _resolve(serviceType, named: name, arguments: arguments) { (serviceFactory: ServiceFactoryType) in }
     }
 
     func _resolve<Service, Arguments>(
         _ serviceType: Service.Type,
         named name: String? = nil,
+        arguments: Any,
         serviceFactory: @escaping ((Arguments) -> Service) -> Void
-    ) -> Any? {
+    ) -> Service? {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
-        return (serviceRegistrations[serviceKey] as? ServiceRegistration)?.serviceFactory
+        let serviceFactory = (serviceRegistrations[serviceKey] as? ServiceRegistration)?.serviceFactory
+
+        return (serviceFactory as? (Arguments) -> Service)?(arguments as! Arguments)
     }
 }

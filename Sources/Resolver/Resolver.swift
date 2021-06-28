@@ -42,12 +42,12 @@ extension Resolver {
     func _resolve<Service, Arguments>(
         _ serviceType: Service.Type,
         named name: String? = nil,
-        arguments: Any,
+        arguments: Arguments,
         serviceFactory: @escaping ((Arguments) -> Service) -> Void
     ) -> Service? {
         let serviceKey = ServiceKey(serviceType: serviceType, name: name, argumentsType: Arguments.self)
         let serviceFactory = serviceRegistrations[serviceKey]?.serviceFactory
 
-        return (serviceFactory as? (Arguments) -> Service)?(arguments as! Arguments)
+        return (serviceFactory as? (Arguments) -> Service)?(arguments)
     }
 }

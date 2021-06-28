@@ -1,7 +1,7 @@
-typealias ServiceType = Any.Type
-typealias ArgumentsType = Any.Type
-
 struct ServiceKey: Hashable {
+    typealias ServiceType = Any.Type
+    typealias ArgumentsType = Any.Type
+
     let serviceType: ServiceType
     let name: String?
     let argumentsType: ArgumentsType?

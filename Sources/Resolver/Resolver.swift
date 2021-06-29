@@ -30,7 +30,7 @@ extension Resolver {
 
 extension Resolver {
     public func resolve<Service>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil
     ) -> Service? {
         let arguments = (self)
@@ -40,7 +40,7 @@ extension Resolver {
     }
 
     func _resolve<Service, Arguments>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments: Arguments,
         serviceFactory: @escaping ((Arguments) -> Service) -> Void

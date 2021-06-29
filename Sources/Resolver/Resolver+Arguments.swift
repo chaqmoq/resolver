@@ -92,7 +92,7 @@ extension Resolver {
 
 extension Resolver {
     public func resolve<Service, Arg1>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1
     ) -> Service? {
@@ -103,7 +103,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2
     ) -> Service? {
@@ -114,7 +114,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3
     ) -> Service? {
@@ -125,7 +125,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4
     ) -> Service? {
@@ -136,7 +136,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5
     ) -> Service? {
@@ -147,7 +147,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6
     ) -> Service? {
@@ -158,7 +158,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7
     ) -> Service? {
@@ -169,7 +169,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8
@@ -181,7 +181,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8, _ arg9: Arg9
@@ -193,7 +193,7 @@ extension Resolver {
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
-        _ serviceType: Service.Type,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8, _ arg9: Arg9, _ arg10: Arg10

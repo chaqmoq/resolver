@@ -1,7 +1,7 @@
 import Foundation
 
 public final class Resolver {
-    private var serviceRegistrations: [ServiceKey: ServiceRegistration] = .init()
+    private var registrations: [ServiceKey: ServiceRegistration] = .init()
 
     public init() {}
 }
@@ -22,9 +22,9 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Arguments) -> Service
     ) {
-        let serviceKey = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
-        let serviceRegistration = ServiceRegistration(scope: scope, factory: factory)
-        serviceRegistrations[serviceKey] = serviceRegistration
+        let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
+        let registration = ServiceRegistration(scope: scope, factory: factory)
+        registrations[key] = registration
     }
 }
 
@@ -45,8 +45,8 @@ extension Resolver {
         arguments: Arguments,
         factory: @escaping ((Arguments) -> Service) -> Void
     ) -> Service? {
-        let serviceKey = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
-        let factory = serviceRegistrations[serviceKey]?.factory
+        let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
+        let factory = registrations[key]?.factory
 
         return (factory as? (Arguments) -> Service)?(arguments)
     }

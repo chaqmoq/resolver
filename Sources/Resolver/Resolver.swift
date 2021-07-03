@@ -54,7 +54,17 @@ extension Resolver {
         let factory = (registration.factory as? (Arguments) -> Service)
 
         switch registration.scope {
-        case .cached: return factory?(arguments) // TODO: implement
+        case .cached:
+            if let service = cachedServices.getValue(forKey: key) {
+                return service as? Service
+            } else {
+                if let service = factory?(arguments) {
+                    cachedServices.setValue(service, forKey: key)
+                    return service
+                }
+
+                return nil
+            }
         case .graph: return factory?(arguments) // TODO: implement
         case .shared: return factory?(arguments) // TODO: implement
         case .singleton:

@@ -2,6 +2,10 @@ import Foundation
 
 public final class Resolver {
     private var registrations: [ServiceKey: ServiceRegistration] = .init()
+    private var cachedServices: Cache<ServiceKey, Any> = .init()
+    private var graphServices: [ServiceKey: Any] = .init()
+    private var sharedServices: [ServiceKey: AnyObject] = .init()
+    private var singletonServices: [ServiceKey: Any] = .init()
 
     public init() {}
 }
@@ -46,8 +50,15 @@ extension Resolver {
         factory: @escaping ((Arguments) -> Service) -> Void
     ) -> Service? {
         let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
-        let factory = registrations[key]?.factory
+        guard let registration = registrations[key] else { return nil }
+        let factory = (registration.factory as? (Arguments) -> Service)
 
-        return (factory as? (Arguments) -> Service)?(arguments)
+        switch registration.scope {
+        case .cached: return factory?(arguments) // TODO: implement
+        case .graph: return factory?(arguments) // TODO: implement
+        case .shared: return factory?(arguments) // TODO: implement
+        case .singleton: return factory?(arguments) // TODO: implement
+        case .unique: return factory?(arguments)
+        }
     }
 }

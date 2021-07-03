@@ -3,90 +3,90 @@ extension Resolver {
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1) -> Service
+        factory: @escaping (Resolver, Arg1) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10) -> Service
+        factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 }
 
@@ -99,7 +99,7 @@ extension Resolver {
         let arguments = (self, arg1)
         typealias ServiceFactory = ((Resolver, Arg1)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2>(
@@ -110,7 +110,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3>(
@@ -121,7 +121,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4>(
@@ -132,7 +132,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3, arg4)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3, Arg4)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(
@@ -143,7 +143,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3, arg4, arg5)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
@@ -154,7 +154,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
@@ -165,7 +165,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
@@ -177,7 +177,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
@@ -189,7 +189,7 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     public func resolve<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
@@ -201,6 +201,6 @@ extension Resolver {
         let arguments = (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
         typealias ServiceFactory = ((Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 }

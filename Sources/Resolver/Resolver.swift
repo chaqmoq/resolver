@@ -11,19 +11,19 @@ extension Resolver {
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Resolver) -> Service
+        factory: @escaping (Resolver) -> Service
     ) {
-        _register(type, named: name, scoped: scope, serviceFactory: serviceFactory)
+        _register(type, named: name, scoped: scope, factory: factory)
     }
 
     func _register<Service, Arguments>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
-        serviceFactory: @escaping (Arguments) -> Service
+        factory: @escaping (Arguments) -> Service
     ) {
         let serviceKey = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
-        let serviceRegistration = ServiceRegistration(scope: scope, serviceFactory: serviceFactory)
+        let serviceRegistration = ServiceRegistration(scope: scope, factory: factory)
         serviceRegistrations[serviceKey] = serviceRegistration
     }
 }
@@ -36,18 +36,18 @@ extension Resolver {
         let arguments = (self)
         typealias ServiceFactory = ((Resolver)) -> Service
 
-        return resolve(type, named: name, arguments: arguments) { (serviceFactory: ServiceFactory) in }
+        return resolve(type, named: name, arguments: arguments) { (factory: ServiceFactory) in }
     }
 
     func resolve<Service, Arguments>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         arguments: Arguments,
-        serviceFactory: @escaping ((Arguments) -> Service) -> Void
+        factory: @escaping ((Arguments) -> Service) -> Void
     ) -> Service? {
         let serviceKey = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
-        let serviceFactory = serviceRegistrations[serviceKey]?.serviceFactory
+        let factory = serviceRegistrations[serviceKey]?.factory
 
-        return (serviceFactory as? (Arguments) -> Service)?(arguments)
+        return (factory as? (Arguments) -> Service)?(arguments)
     }
 }

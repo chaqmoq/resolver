@@ -2,10 +2,10 @@ final class ServiceRegistration {
     typealias ServiceFactory = Any
 
     let scope: Scope
-    let serviceFactory: ServiceFactory
+    let factory: ServiceFactory
 
-    init(scope: Scope, serviceFactory: ServiceFactory) {
+    init(scope: Scope, factory: ServiceFactory) {
         self.scope = scope
-        self.serviceFactory = serviceFactory
+        self.factory = factory
     }
 }

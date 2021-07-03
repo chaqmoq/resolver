@@ -57,7 +57,15 @@ extension Resolver {
         case .cached: return factory?(arguments) // TODO: implement
         case .graph: return factory?(arguments) // TODO: implement
         case .shared: return factory?(arguments) // TODO: implement
-        case .singleton: return factory?(arguments) // TODO: implement
+        case .singleton:
+            if let service = singletonServices[key] {
+                return service as? Service
+            } else {
+                let service = factory?(arguments)
+                singletonServices[key] = service
+
+                return service
+            }
         case .unique: return factory?(arguments)
         }
     }

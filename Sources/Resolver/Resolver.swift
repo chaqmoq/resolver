@@ -55,38 +55,30 @@ extension Resolver {
 
         switch registration.scope {
         case .cached:
-            if let service = cachedServices.getValue(forKey: key) {
-                return service as? Service
-            } else {
-                if let service = factory?(arguments) {
-                    cachedServices.setValue(service, forKey: key)
-                    return service
-                }
+            if let service = cachedServices.getValue(forKey: key) { return service as? Service }
 
-                return nil
+            if let service = factory?(arguments) {
+                cachedServices.setValue(service, forKey: key)
+                return service
             }
+
+            return nil
         case .graph: return factory?(arguments) // TODO: implement
         case .shared:
-            if let service = sharedServices[key]?.service {
-                return service as? Service
-            } else {
-                let service = factory?(arguments)
+            if let service = sharedServices[key]?.service { return service as? Service }
+            let service = factory?(arguments)
 
-                if let service = service, type(of: service) is AnyClass {
-                    sharedServices[key] = WeakService(service as AnyObject)
-                }
-
-                return service
+            if let service = service, type(of: service) is AnyClass {
+                sharedServices[key] = WeakService(service as AnyObject)
             }
+
+            return service
         case .singleton:
-            if let service = singletonServices[key] {
-                return service as? Service
-            } else {
-                let service = factory?(arguments)
-                singletonServices[key] = service
+            if let service = singletonServices[key] { return service as? Service }
+            let service = factory?(arguments)
+            singletonServices[key] = service
 
-                return service
-            }
+            return service
         case .unique: return factory?(arguments)
         }
     }

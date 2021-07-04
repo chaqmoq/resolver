@@ -51,7 +51,7 @@ extension Resolver {
     ) -> Service? {
         let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
         guard let registration = registrations[key] else { return nil }
-        let factory = (registration.factory as? (Arguments) -> Service)
+        let factory = registration.factory as? (Arguments) -> Service
 
         switch registration.scope {
         case .cached:

@@ -44,12 +44,12 @@ extension Resolver {
     }
 
     func resolve<Service, Arguments>(
-        _ type: Service.Type = Service.self,
+        _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments: Arguments,
         factory: @escaping ((Arguments) -> Service) -> Void
     ) -> Service? {
-        let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
+        let key = ServiceKey(type: serviceType, name: name, argumentsType: Arguments.self)
         guard let registration = registrations[key] else { return nil }
         let factory = registration.factory as? (Arguments) -> Service
 
@@ -66,7 +66,18 @@ extension Resolver {
                 return nil
             }
         case .graph: return factory?(arguments) // TODO: implement
-        case .shared: return factory?(arguments) // TODO: implement
+        case .shared:
+            if let service = sharedServices[key]?.service {
+                return service as? Service
+            } else {
+                let service = factory?(arguments)
+
+                if let service = service, type(of: service) is AnyClass {
+                    sharedServices[key] = WeakService(service as AnyObject)
+                }
+
+                return service
+            }
         case .singleton:
             if let service = singletonServices[key] {
                 return service as? Service

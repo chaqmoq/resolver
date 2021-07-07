@@ -6,6 +6,7 @@ public final class Resolver {
     private var graphServices: [ServiceKey: Any] = .init()
     private var sharedServices: [ServiceKey: WeakService] = .init()
     private var singletonServices: [ServiceKey: Any] = .init()
+    private var resolutionDepth = 0
 
     public init() {}
 }
@@ -63,7 +64,19 @@ extension Resolver {
             }
 
             return nil
-        case .graph: return factory?(arguments) // TODO: implement
+        case .graph:
+            if let service = graphServices[key] { return service as? Service }
+            resolutionDepth += 1
+            let service = factory?(arguments) // TODO: recursive resolution
+            resolutionDepth -= 1
+
+            if resolutionDepth == 0 {
+                graphServices.removeAll()
+            } else if let service = service, type(of: service) is AnyClass {
+                graphServices[key] = service
+            }
+
+            return service
         case .shared:
             if let service = sharedServices[key]?.service { return service as? Service }
             let service = factory?(arguments)

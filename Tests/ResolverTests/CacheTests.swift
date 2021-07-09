@@ -1,5 +1,5 @@
-import XCTest
 @testable import Resolver
+import XCTest
 
 final class CacheTests: XCTestCase {
     func testInit() {

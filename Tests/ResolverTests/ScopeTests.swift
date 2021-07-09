@@ -10,4 +10,10 @@ final class ScopeTests: XCTestCase {
         XCTAssertEqual(Scope.singleton.rawValue, "singleton")
         XCTAssertEqual(Scope.unique.rawValue, "unique")
     }
+
+    func testDescription() {
+        for scope in Scope.allCases {
+            XCTAssertEqual(scope.rawValue, "\(scope)")
+        }
+    }
 }

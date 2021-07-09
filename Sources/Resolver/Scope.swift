@@ -1,4 +1,4 @@
-public enum Scope: String {
+public enum Scope: String, CaseIterable {
     case cached
     case graph
     case shared

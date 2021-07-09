@@ -10,4 +10,16 @@ final class ServiceKeyTests: XCTestCase {
         // Assert
         XCTAssertEqual(key1, key2)
     }
+
+    func testHashable() {
+        // Arrange
+        let key = ServiceKey(type: String.self, name: "string", argumentsType: Int.self)
+        let value = String(1)
+
+        // Act
+        let dictionary = [key: value]
+
+        // Assert
+        XCTAssertEqual(dictionary[key], value)
+    }
 }

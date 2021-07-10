@@ -5,7 +5,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2>(
@@ -14,7 +14,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3>(
@@ -23,7 +23,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4>(
@@ -32,7 +32,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(
@@ -41,7 +41,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
@@ -50,7 +50,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
@@ -59,7 +59,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
@@ -68,7 +68,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
@@ -77,7 +77,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
     public func register<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
@@ -86,7 +86,7 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 }
 

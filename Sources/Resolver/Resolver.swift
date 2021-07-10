@@ -18,10 +18,10 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver) -> Service
     ) {
-        _register(type, named: name, scoped: scope, factory: factory)
+        doRegister(type, named: name, scoped: scope, factory: factory)
     }
 
-    func _register<Service, Arguments>(
+    func doRegister<Service, Arguments>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,

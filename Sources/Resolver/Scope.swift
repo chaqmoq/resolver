@@ -1,9 +1,5 @@
 public enum Scope: String, CaseIterable, CustomStringConvertible {
-    case cached
-    case graph
-    case shared
-    case singleton
-    case unique
+    case cached, graph, shared, singleton, unique
 
     public var description: String { rawValue }
 }

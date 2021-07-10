@@ -6,6 +6,7 @@ final class ResolverTests: XCTestCase {
 
     let arg1 = "string"
     let arg2 = 1
+    let arg3: Float = 2.5
 
     func testRegisterAndResolve() {
         // Arrange
@@ -63,6 +64,29 @@ final class ResolverTests: XCTestCase {
             XCTAssertNotNil(service)
             XCTAssertEqual(service?.arg1, arg1)
             XCTAssertEqual(service?.arg2, arg2)
+        }
+    }
+
+    func testRegisterAndResolveWithThreeArguments() {
+        // Arrange
+        let type = ServiceWithThreeArguments.self
+        var name = String(describing: type)
+
+        for scope in Scope.allCases {
+            // Arrange
+            name += scope.rawValue
+
+            // Act
+            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3 in
+                ServiceWithThreeArguments(arg1: arg1, arg2: arg2, arg3: arg3)
+            }
+            let service = resolver.resolve(type, named: name, arguments: arg1, arg2, arg3)
+
+            // Assert
+            XCTAssertNotNil(service)
+            XCTAssertEqual(service?.arg1, arg1)
+            XCTAssertEqual(service?.arg2, arg2)
+            XCTAssertEqual(service?.arg3, arg3)
         }
     }
 }

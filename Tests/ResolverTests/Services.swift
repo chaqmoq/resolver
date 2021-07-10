@@ -17,3 +17,15 @@ final class ServiceWithTwoArguments {
         self.arg2 = arg2
     }
 }
+
+final class ServiceWithThreeArguments {
+    let arg1: String
+    let arg2: Int
+    let arg3: Float
+
+    init(arg1: String, arg2: Int, arg3: Float) {
+        self.arg1 = arg1
+        self.arg2 = arg2
+        self.arg3 = arg3
+    }
+}

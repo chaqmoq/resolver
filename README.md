@@ -12,7 +12,7 @@ cd MyApp
 swift package init --type executable // Creates an executable app named "MyApp"
 ```
 
-### Package.swift
+#### Package.swift
 ```swift
 // swift-tools-version:5.3
 

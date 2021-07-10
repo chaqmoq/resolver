@@ -43,3 +43,19 @@ final class ServiceWithFourArguments {
         self.arg4 = arg4
     }
 }
+
+final class ServiceWithFiveArguments {
+    let arg1: String
+    let arg2: Int
+    let arg3: Float
+    let arg4: Double
+    let arg5: Bool
+
+    init(arg1: String, arg2: Int, arg3: Float, arg4: Double, arg5: Bool) {
+        self.arg1 = arg1
+        self.arg2 = arg2
+        self.arg3 = arg3
+        self.arg4 = arg4
+        self.arg5 = arg5
+    }
+}

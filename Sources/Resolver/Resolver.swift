@@ -38,10 +38,7 @@ extension Resolver {
         _ type: Service.Type = Service.self,
         named name: String? = nil
     ) -> Service? {
-        let arguments = (self)
-        typealias Factory = ((Resolver)) -> Service
-
-        return resolve(type, named: name, arguments: arguments) { (factory: Factory) in }
+        resolve(type, named: name, arguments: (self)) { _ in }
     }
 
     func resolve<Service, Arguments>(

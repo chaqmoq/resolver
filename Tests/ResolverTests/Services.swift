@@ -119,3 +119,37 @@ final class ServiceWithEightArguments {
         self.arg8 = arg8
     }
 }
+
+final class ServiceWithNineArguments {
+    let arg1: String
+    let arg2: Int
+    let arg3: Float
+    let arg4: Double
+    let arg5: Bool
+    let arg6: Character
+    let arg7: UInt
+    let arg8: UInt8
+    let arg9: UInt16
+
+    init(
+        arg1: String,
+        arg2: Int,
+        arg3: Float,
+        arg4: Double,
+        arg5: Bool,
+        arg6: Character,
+        arg7: UInt,
+        arg8: UInt8,
+        arg9: UInt16
+    ) {
+        self.arg1 = arg1
+        self.arg2 = arg2
+        self.arg3 = arg3
+        self.arg4 = arg4
+        self.arg5 = arg5
+        self.arg6 = arg6
+        self.arg7 = arg7
+        self.arg8 = arg8
+        self.arg9 = arg9
+    }
+}

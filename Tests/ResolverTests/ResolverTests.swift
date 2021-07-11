@@ -32,6 +32,23 @@ final class ResolverTests: XCTestCase {
         }
     }
 
+    func testRecursiveResolveWithGraphScope() {
+        // Arrange
+        resolver.register() { _ in Service() }
+        resolver.register() { resolver in
+            Service2(arg1: resolver.resolve(Service.self)!)
+        }
+        resolver.register() { resolver in
+            Service3(arg1: resolver.resolve(Service2.self)!)
+        }
+
+        // Act
+        let service = resolver.resolve(Service3.self)
+
+        // Assert
+        XCTAssertNotNil(service)
+    }
+
     func testRegisterAndResolve() {
         // Arrange
         let type = Service.self

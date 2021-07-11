@@ -1,5 +1,21 @@
 final class Service {}
 
+final class Service2 {
+    let arg1: Service
+
+    init(arg1: Service) {
+        self.arg1 = arg1
+    }
+}
+
+final class Service3 {
+    let arg1: Service2
+
+    init(arg1: Service2) {
+        self.arg1 = arg1
+    }
+}
+
 final class ServiceWithOneArgument {
     let arg1: String
 

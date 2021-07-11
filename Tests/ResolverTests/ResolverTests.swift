@@ -26,10 +26,18 @@ final class ResolverTests: XCTestCase {
 
             // Act
             resolver.register(type, named: name, scoped: scope) { _ in Service() }
-            let service = resolver.resolve(type, named: name)
+            let service1 = resolver.resolve(type, named: name)
+            let service2 = resolver.resolve(type, named: name)
 
             // Assert
-            XCTAssertNotNil(service)
+            XCTAssertNotNil(service1)
+            XCTAssertNotNil(service2)
+
+            if scope == .graph || scope == .unique {
+                XCTAssertFalse(service1 === service2)
+            } else {
+                XCTAssertTrue(service1 === service2)
+            }
         }
     }
 

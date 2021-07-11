@@ -64,7 +64,7 @@ extension Resolver {
         case .graph:
             if let service = graphServices[key] { return service as? Service }
             resolutionDepth += 1
-            let service = factory?(arguments) // TODO: recursive resolution
+            let service = factory?(arguments)
             resolutionDepth -= 1
 
             if resolutionDepth == 0 {

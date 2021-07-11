@@ -15,6 +15,23 @@ final class ResolverTests: XCTestCase {
     let arg9: UInt16 = 6
     let arg10: UInt32 = 7
 
+    func testResolveWithoutRegistration() {
+        // Arrange
+        let type = Service.self
+        var name = String(describing: type)
+
+        for scope in Scope.allCases {
+            // Arrange
+            name += scope.rawValue
+
+            // Act
+            let service = resolver.resolve(type, named: name)
+
+            // Assert
+            XCTAssertNil(service)
+        }
+    }
+
     func testRegisterAndResolve() {
         // Arrange
         let type = Service.self

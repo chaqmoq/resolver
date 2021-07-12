@@ -12,24 +12,29 @@ public final class Resolver {
 }
 
 extension Resolver {
+    @discardableResult
     public func register<Service>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
         factory: @escaping (Resolver) -> Service
-    ) {
+    ) -> Self {
         doRegister(type, named: name, scoped: scope, factory: factory)
+        return self
     }
 
+    @discardableResult
     func doRegister<Service, Arguments>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
         scoped scope: Scope = .graph,
         factory: @escaping (Arguments) -> Service
-    ) {
+    ) -> Self {
         let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
         let registration = ServiceRegistration(scope: scope, factory: factory)
         registrations[key] = registration
+
+        return self
     }
 }
 

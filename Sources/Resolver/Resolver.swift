@@ -49,46 +49,43 @@ extension Resolver {
     ) -> Service? {
         let key = ServiceKey(type: serviceType, name: name, argumentsType: Arguments.self)
         guard let registration = registrations[key] else { return nil }
-        let factory = registration.factory as? (Arguments) -> Service
+        guard let factory = registration.factory as? (Arguments) -> Service else { return nil }
 
         switch registration.scope {
         case .cached:
             if let service = cachedServices.getValue(forKey: key) { return service as? Service }
+            let service = factory(arguments)
+            cachedServices.setValue(service, forKey: key)
 
-            if let service = factory?(arguments) {
-                cachedServices.setValue(service, forKey: key)
-                return service
-            }
-
-            return nil
+            return service
         case .graph:
             resolutionDepth += 1
-            let service = factory?(arguments)
+            let service = factory(arguments)
             resolutionDepth -= 1
 
             if resolutionDepth == 0 {
                 graphServices.removeAll()
-            } else if let service = service, type(of: service) is AnyClass {
+            } else if type(of: service) is AnyClass {
                 graphServices[key] = service
             }
 
             return service
         case .shared:
             if let service = sharedServices[key]?.service { return service as? Service }
-            let service = factory?(arguments)
+            let service = factory(arguments)
 
-            if let service = service, type(of: service) is AnyClass {
+            if type(of: service) is AnyClass {
                 sharedServices[key] = WeakService(service as AnyObject)
             }
 
             return service
         case .singleton:
             if let service = singletonServices[key] { return service as? Service }
-            let service = factory?(arguments)
+            let service = factory(arguments)
             singletonServices[key] = service
 
             return service
-        case .unique: return factory?(arguments)
+        case .unique: return factory(arguments)
         }
     }
 }

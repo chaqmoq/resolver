@@ -62,7 +62,6 @@ extension Resolver {
 
             return nil
         case .graph:
-            if let service = graphServices[key] { return service as? Service }
             resolutionDepth += 1
             let service = factory?(arguments)
             resolutionDepth -= 1

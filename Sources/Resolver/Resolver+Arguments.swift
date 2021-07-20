@@ -236,6 +236,14 @@ extension Resolver {
     ) -> Service? {
         main.resolve(type, named: name, arguments: (self, arg1, arg2, arg3)) { _ in }
     }
+
+    public static func resolve<Service, Arg1, Arg2, Arg3, Arg4>(
+        _ type: Service.Type = Service.self,
+        named name: String? = nil,
+        arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4
+    ) -> Service? {
+        main.resolve(type, named: name, arguments: (self, arg1, arg2, arg3, arg4)) { _ in }
+    }
 }
 
 extension Resolver {

@@ -2,8 +2,6 @@
 import XCTest
 
 final class ResolverTests: XCTestCase {
-    let resolver = Resolver()
-
     let arg1 = "string"
     let arg2 = 1
     let arg3: Float = 2.5
@@ -15,7 +13,13 @@ final class ResolverTests: XCTestCase {
     let arg9: UInt16 = 6
     let arg10: UInt32 = 7
 
-    func testResolveWithoutRegistration() {
+    override func setUp() {
+        super.setUp()
+
+        Resolver.main = .init()
+    }
+
+    func testResolveWithoutRegister() {
         // Arrange
         let type = Service.self
         var name = String(describing: type)
@@ -25,7 +29,7 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            let service = resolver.resolve(type, named: name)
+            let service = Resolver.resolve(type, named: name)
 
             // Assert
             XCTAssertNil(service)
@@ -34,16 +38,16 @@ final class ResolverTests: XCTestCase {
 
     func testRecursiveResolveWithGraphScope() {
         // Arrange
-        resolver.register() { _ in Service() }
-        resolver.register() { resolver in
+        Resolver.register() { _ in Service() }
+        Resolver.register() { resolver in
             Service2(arg1: resolver.resolve(Service.self)!)
         }
-        resolver.register() { resolver in
+        Resolver.register() { resolver in
             Service3(arg1: resolver.resolve(Service2.self)!)
         }
 
         // Act
-        let service = resolver.resolve(Service3.self)
+        let service = Resolver.resolve(Service3.self)
 
         // Assert
         XCTAssertNotNil(service)
@@ -59,9 +63,9 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _ in Service() }
-            let service1 = resolver.resolve(type, named: name)
-            let service2 = resolver.resolve(type, named: name)
+            Resolver.register(type, named: name, scoped: scope) { _ in Service() }
+            let service1 = Resolver.resolve(type, named: name)
+            let service2 = Resolver.resolve(type, named: name)
 
             // Assert
             XCTAssertNotNil(service1)
@@ -85,8 +89,8 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1 in ServiceWithOneArgument(arg1: arg1) }
-            let service = resolver.resolve(type, named: name, arguments: arg1)
+            Resolver.register(type, named: name, scoped: scope) { _, arg1 in ServiceWithOneArgument(arg1: arg1) }
+            let service = Resolver.resolve(type, named: name, arguments: arg1)
 
             // Assert
             XCTAssertNotNil(service)
@@ -104,10 +108,10 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2 in
+            Resolver.register(type, named: name, scoped: scope) { _, arg1, arg2 in
                 ServiceWithTwoArguments(arg1: arg1, arg2: arg2)
             }
-            let service = resolver.resolve(type, named: name, arguments: arg1, arg2)
+            let service = Resolver.resolve(type, named: name, arguments: arg1, arg2)
 
             // Assert
             XCTAssertNotNil(service)
@@ -126,10 +130,10 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3 in
+            Resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3 in
                 ServiceWithThreeArguments(arg1: arg1, arg2: arg2, arg3: arg3)
             }
-            let service = resolver.resolve(type, named: name, arguments: arg1, arg2, arg3)
+            let service = Resolver.resolve(type, named: name, arguments: arg1, arg2, arg3)
 
             // Assert
             XCTAssertNotNil(service)
@@ -149,10 +153,10 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4 in
+            Resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4 in
                 ServiceWithFourArguments(arg1: arg1, arg2: arg2, arg3: arg3, arg4: arg4)
             }
-            let service = resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4)
+            let service = Resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4)
 
             // Assert
             XCTAssertNotNil(service)
@@ -173,10 +177,10 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5 in
+            Resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5 in
                 ServiceWithFiveArguments(arg1: arg1, arg2: arg2, arg3: arg3, arg4: arg4, arg5: arg5)
             }
-            let service = resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5)
+            let service = Resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5)
 
             // Assert
             XCTAssertNotNil(service)
@@ -198,10 +202,10 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5, arg6 in
+            Resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5, arg6 in
                 ServiceWithSixArguments(arg1: arg1, arg2: arg2, arg3: arg3, arg4: arg4, arg5: arg5, arg6: arg6)
             }
-            let service = resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6)
+            let service = Resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6)
 
             // Assert
             XCTAssertNotNil(service)
@@ -224,7 +228,7 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7 in
+            Resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7 in
                 ServiceWithSevenArguments(
                     arg1: arg1,
                     arg2: arg2,
@@ -235,7 +239,7 @@ final class ResolverTests: XCTestCase {
                     arg7: arg7
                 )
             }
-            let service = resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7)
+            let service = Resolver.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 
             // Assert
             XCTAssertNotNil(service)
@@ -259,7 +263,7 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 in
+            Resolver.register(type, named: name, scoped: scope) { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 in
                 ServiceWithEightArguments(
                     arg1: arg1,
                     arg2: arg2,
@@ -271,7 +275,7 @@ final class ResolverTests: XCTestCase {
                     arg8: arg8
                 )
             }
-            let service = resolver.resolve(
+            let service = Resolver.resolve(
                 type,
                 named: name,
                 arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8
@@ -300,7 +304,7 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) {
+            Resolver.register(type, named: name, scoped: scope) {
                 _, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9 in
                 ServiceWithNineArguments(
                     arg1: arg1,
@@ -314,7 +318,7 @@ final class ResolverTests: XCTestCase {
                     arg9: arg9
                 )
             }
-            let service = resolver.resolve(
+            let service = Resolver.resolve(
                 type,
                 named: name,
                 arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9
@@ -344,7 +348,7 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            resolver.register(type, named: name, scoped: scope) {
+            Resolver.register(type, named: name, scoped: scope) {
                 _, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 in
                 ServiceWithTenArguments(
                     arg1: arg1,
@@ -359,7 +363,7 @@ final class ResolverTests: XCTestCase {
                     arg10: arg10
                 )
             }
-            let service = resolver.resolve(
+            let service = Resolver.resolve(
                 type,
                 named: name,
                 arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10

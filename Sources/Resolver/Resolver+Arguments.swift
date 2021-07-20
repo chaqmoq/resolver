@@ -8,6 +8,16 @@ extension Resolver {
     ) -> Resolver {
         main.register(type, named: name, scoped: scope, factory: factory)
     }
+
+    @discardableResult
+    public static func register<Service, Arg1, Arg2>(
+        _ type: Service.Type = Service.self,
+        named name: String? = nil,
+        scoped scope: Scope = .graph,
+        factory: @escaping (Resolver, Arg1, Arg2) -> Service
+    ) -> Resolver {
+        main.register(type, named: name, scoped: scope, factory: factory)
+    }
 }
 
 extension Resolver {

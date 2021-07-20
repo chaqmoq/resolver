@@ -55,17 +55,17 @@ extension Resolver {
         _ type: Service.Type = Service.self,
         named name: String? = nil
     ) -> Service? {
-        main.resolve(type, named: name, arguments: (self)) { _ in }
+        main.resolve(type, named: name)
     }
 
     public func resolve<Service>(
         _ type: Service.Type = Service.self,
         named name: String? = nil
     ) -> Service? {
-        resolve(type, named: name, arguments: (self)) { _ in }
+        doResolve(type, named: name, arguments: (self)) { _ in }
     }
 
-    func resolve<Service, Arguments>(
+    func doResolve<Service, Arguments>(
         _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments: Arguments,
@@ -115,7 +115,7 @@ extension Resolver {
 }
 
 extension Resolver {
-    private struct WeakService {
+    struct WeakService {
         weak var service: AnyObject?
 
         init(_ service: AnyObject?) {

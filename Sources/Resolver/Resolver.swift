@@ -15,6 +15,16 @@ public final class Resolver {
 
 extension Resolver {
     @discardableResult
+    public static func register<Service>(
+        _ type: Service.Type = Service.self,
+        named name: String? = nil,
+        scoped scope: Scope = .graph,
+        factory: @escaping (Resolver) -> Service
+    ) -> Resolver {
+        main.register(type, named: name, scoped: scope, factory: factory)
+    }
+
+    @discardableResult
     public func register<Service>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,

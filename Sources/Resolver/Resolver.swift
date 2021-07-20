@@ -1,6 +1,8 @@
 import Foundation
 
 public final class Resolver {
+    public static var main: Resolver = .init()
+
     private var registrations: [ServiceKey: ServiceRegistration] = .init()
     private var cachedServices: Cache<ServiceKey, Any> = .init()
     private var graphServices: [ServiceKey: Any] = .init()

@@ -1,9 +1,11 @@
-final class Service {}
+import Resolver
+
+final class Service1 {}
 
 final class Service2 {
-    let arg1: Service
+    let arg1: Service1
 
-    init(arg1: Service) {
+    init(arg1: Service1) {
         self.arg1 = arg1
     }
 }

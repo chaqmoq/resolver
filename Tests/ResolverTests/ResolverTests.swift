@@ -21,7 +21,7 @@ final class ResolverTests: XCTestCase {
 
     func testResolveWithoutRegister() {
         // Arrange
-        let type = Service.self
+        let type = Service1.self
         var name = String(describing: type)
 
         for scope in Scope.allCases {
@@ -38,9 +38,9 @@ final class ResolverTests: XCTestCase {
 
     func testRecursiveResolveWithGraphScope() {
         // Arrange
-        Resolver.register() { _ in Service() }
+        Resolver.register() { _ in Service1() }
         Resolver.register() { resolver in
-            Service2(arg1: resolver.resolve(Service.self)!)
+            Service2(arg1: resolver.resolve(Service1.self)!)
         }
         Resolver.register() { resolver in
             Service3(arg1: resolver.resolve(Service2.self)!)
@@ -55,7 +55,7 @@ final class ResolverTests: XCTestCase {
 
     func testRegisterAndResolve() {
         // Arrange
-        let type = Service.self
+        let type = Service1.self
         var name = String(describing: type)
 
         for scope in Scope.allCases {
@@ -63,7 +63,7 @@ final class ResolverTests: XCTestCase {
             name += scope.rawValue
 
             // Act
-            Resolver.register(type, named: name, scoped: scope) { _ in Service() }
+            Resolver.register(type, named: name, scoped: scope) { _ in Service1() }
             let service1 = Resolver.resolve(type, named: name)
             let service2 = Resolver.resolve(type, named: name)
 

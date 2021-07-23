@@ -13,4 +13,8 @@
     public init<Arg1>(resolver: Resolver = .main, name: String? = nil, arguments arg1: Arg1) {
         service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1)) { _ in }!
     }
+
+    public init<Arg1, Arg2>(resolver: Resolver = .main, name: String? = nil, arguments arg1: Arg1, _ arg2: Arg2) {
+        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1, arg2)) { _ in }!
+    }
 }

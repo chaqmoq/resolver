@@ -1,8 +1,10 @@
 import Foundation
 
 public final class Resolver {
-    public static var main: Resolver = .init()
+    public static var main = Resolver()
+    public var isAtomic: Bool
 
+    static let lock = RecursiveLock()
     private var registrations: [ServiceKey: ServiceRegistration] = .init()
     private var cachedServices: Cache<ServiceKey, Any> = .init()
     private var graphServices: [ServiceKey: Any] = .init()
@@ -10,7 +12,9 @@ public final class Resolver {
     private var singletonServices: [ServiceKey: Any] = .init()
     private var resolutionDepth = 0
 
-    public init() {}
+    public init(isAtomic: Bool = true) {
+        self.isAtomic = isAtomic
+    }
 }
 
 extension Resolver {
@@ -42,6 +46,18 @@ extension Resolver {
         scoped scope: Scope = .graph,
         factory: @escaping (Arguments) -> Service
     ) -> Self {
+        isAtomic
+            ? Self.lock.sync { performRegister(type, named: name, scoped: scope, factory: factory) }
+            : performRegister(type, named: name, scoped: scope, factory: factory)
+    }
+
+    @discardableResult
+    private func performRegister<Service, Arguments>(
+        _ type: Service.Type = Service.self,
+        named name: String? = nil,
+        scoped scope: Scope = .graph,
+        factory: @escaping (Arguments) -> Service
+    ) -> Self {
         let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
         let registration = ServiceRegistration(scope: scope, factory: factory)
         registrations[key] = registration
@@ -66,6 +82,17 @@ extension Resolver {
     }
 
     func doResolve<Service, Arguments>(
+        _ type: Service.Type = Service.self,
+        named name: String? = nil,
+        arguments: Arguments,
+        factory: @escaping ((Arguments) -> Service) -> Void
+    ) -> Service? {
+        isAtomic
+            ? Self.lock.sync { performResolve(type, named: name, arguments: arguments, factory: factory) }
+            : performResolve(type, named: name, arguments: arguments, factory: factory)
+    }
+
+    private func performResolve<Service, Arguments>(
         _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
         arguments: Arguments,

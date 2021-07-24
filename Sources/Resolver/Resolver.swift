@@ -5,7 +5,7 @@ public final class Resolver {
     public static var defaultScope: Scope = .graph
     public var isAtomic: Bool
 
-    static let lock = RecursiveLock()
+    let lock = RecursiveLock()
     private var registrations: [ServiceKey: ServiceRegistration] = .init()
     private var cachedServices: Cache<ServiceKey, Any> = .init()
     private var graphServices: [ServiceKey: Any] = .init()
@@ -48,7 +48,7 @@ extension Resolver {
         factory: @escaping (Arguments) -> Service
     ) -> Self {
         isAtomic
-            ? Self.lock.sync { performRegister(type, named: name, scoped: scope, factory: factory) }
+            ? lock.sync { performRegister(type, named: name, scoped: scope, factory: factory) }
             : performRegister(type, named: name, scoped: scope, factory: factory)
     }
 
@@ -89,7 +89,7 @@ extension Resolver {
         factory: @escaping ((Arguments) -> Service) -> Void
     ) -> Service? {
         isAtomic
-            ? Self.lock.sync { performResolve(type, named: name, arguments: arguments, factory: factory) }
+            ? lock.sync { performResolve(type, named: name, arguments: arguments, factory: factory) }
             : performResolve(type, named: name, arguments: arguments, factory: factory)
     }
 

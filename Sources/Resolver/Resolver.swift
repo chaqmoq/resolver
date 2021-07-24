@@ -2,6 +2,7 @@ import Foundation
 
 public final class Resolver {
     public static var main = Resolver()
+    public static var defaultScope: Scope = .graph
     public var isAtomic: Bool
 
     static let lock = RecursiveLock()
@@ -22,7 +23,7 @@ extension Resolver {
     public static func register<Service>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
-        scoped scope: Scope = .graph,
+        scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver) -> Service
     ) -> Resolver {
         main.register(type, named: name, scoped: scope, factory: factory)
@@ -32,7 +33,7 @@ extension Resolver {
     public func register<Service>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
-        scoped scope: Scope = .graph,
+        scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver) -> Service
     ) -> Self {
         doRegister(type, named: name, scoped: scope, factory: factory)
@@ -43,7 +44,7 @@ extension Resolver {
     func doRegister<Service, Arguments>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
-        scoped scope: Scope = .graph,
+        scoped scope: Scope = defaultScope,
         factory: @escaping (Arguments) -> Service
     ) -> Self {
         isAtomic
@@ -55,7 +56,7 @@ extension Resolver {
     private func performRegister<Service, Arguments>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
-        scoped scope: Scope = .graph,
+        scoped scope: Scope = defaultScope,
         factory: @escaping (Arguments) -> Service
     ) -> Self {
         let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)

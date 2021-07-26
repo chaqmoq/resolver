@@ -79,7 +79,7 @@ extension Resolver {
         _ type: Service.Type = Service.self,
         named name: String? = nil
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self)) { _ in }
+        doResolve(type, named: name, arguments: self) { _ in }
     }
 
     func doResolve<Service, Arguments>(

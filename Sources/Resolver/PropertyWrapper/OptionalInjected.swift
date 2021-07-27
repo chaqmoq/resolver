@@ -20,12 +20,12 @@
 
     public init<Arg1>(resolver: Resolver = .main, name: String? = nil, arguments arg1: Arg1) {
         self.resolver = resolver
-        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1)) { _ in }
+        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1))
     }
 
     public init<Arg1, Arg2>(resolver: Resolver = .main, name: String? = nil, arguments arg1: Arg1, _ arg2: Arg2) {
         self.resolver = resolver
-        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1, arg2)) { _ in }
+        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1, arg2))
     }
 
     public init<Arg1, Arg2, Arg3>(
@@ -34,7 +34,7 @@
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3
     ) {
         self.resolver = resolver
-        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1, arg2, arg3)) { _ in }
+        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1, arg2, arg3))
     }
 
     public init<Arg1, Arg2, Arg3, Arg4>(
@@ -47,7 +47,7 @@
             Service.self,
             named: name,
             arguments: (resolver, arg1, arg2, arg3, arg4)
-        ) { _ in }
+        )
     }
 
     public init<Arg1, Arg2, Arg3, Arg4, Arg5>(
@@ -60,7 +60,7 @@
             Service.self,
             named: name,
             arguments: (resolver, arg1, arg2, arg3, arg4, arg5)
-        ) { _ in }
+        )
     }
 
     public init<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
@@ -73,7 +73,7 @@
             Service.self,
             named: name,
             arguments: (resolver, arg1, arg2, arg3, arg4, arg5, arg6)
-        ) { _ in }
+        )
     }
 
     public init<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
@@ -86,7 +86,7 @@
             Service.self,
             named: name,
             arguments: (resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
-        ) { _ in }
+        )
     }
 
     public init<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
@@ -100,7 +100,7 @@
             Service.self,
             named: name,
             arguments: (resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
-        ) { _ in }
+        )
     }
 
     public init<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
@@ -114,7 +114,7 @@
             Service.self,
             named: name,
             arguments: (resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9)
-        ) { _ in }
+        )
     }
 
     public init<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
@@ -128,6 +128,6 @@
             Service.self,
             named: name,
             arguments: (resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
-        ) { _ in }
+        )
     }
 }

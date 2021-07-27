@@ -68,36 +68,28 @@ extension Resolver {
 }
 
 extension Resolver {
-    public static func resolve<Service>(
-        _ type: Service.Type = Service.self,
-        named name: String? = nil
-    ) -> Service? {
+    public static func resolve<Service>(_ type: Service.Type = Service.self, named name: String? = nil) -> Service? {
         main.resolve(type, named: name)
     }
 
-    public func resolve<Service>(
-        _ type: Service.Type = Service.self,
-        named name: String? = nil
-    ) -> Service? {
-        doResolve(type, named: name, arguments: self) { _ in }
+    public func resolve<Service>(_ type: Service.Type = Service.self, named name: String? = nil) -> Service? {
+        doResolve(type, named: name, arguments: self)
     }
 
     func doResolve<Service, Arguments>(
         _ type: Service.Type = Service.self,
         named name: String? = nil,
-        arguments: Arguments,
-        factory: @escaping ((Arguments) -> Service) -> Void
+        arguments: Arguments
     ) -> Service? {
         isAtomic
-            ? lock.sync { performResolve(type, named: name, arguments: arguments, factory: factory) }
-            : performResolve(type, named: name, arguments: arguments, factory: factory)
+            ? lock.sync { performResolve(type, named: name, arguments: arguments) }
+            : performResolve(type, named: name, arguments: arguments)
     }
 
     private func performResolve<Service, Arguments>(
         _ serviceType: Service.Type = Service.self,
         named name: String? = nil,
-        arguments: Arguments,
-        factory: @escaping ((Arguments) -> Service) -> Void
+        arguments: Arguments
     ) -> Service? {
         let key = ServiceKey(type: serviceType, name: name, argumentsType: Arguments.self)
         guard let registration = registrations[key] else { return nil }

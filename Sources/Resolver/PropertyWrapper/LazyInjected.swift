@@ -5,14 +5,10 @@ import Foundation
         mutating get {
             if resolver.isAtomic {
                 resolver.lock.sync {
-                    if service == nil {
-                        service = resolver.doResolve(Service.self, named: name, arguments: resolver)
-                    }
+                    if service == nil { service = resolver.doResolve(Service.self, named: name, arguments: resolver) }
                 }
             } else {
-                if service == nil {
-                    service = resolver.doResolve(Service.self, named: name, arguments: resolver)
-                }
+                if service == nil { service = resolver.doResolve(Service.self, named: name, arguments: resolver) }
             }
 
             return service

@@ -19,7 +19,7 @@ final class ResolverTests: XCTestCase {
         Resolver.main = .init()
     }
 
-    func testResolveWithoutRegister() {
+    func testResolutionFailureWithoutRegistration() {
         // Arrange
         let type = Service1.self
         var name = String(describing: type)
@@ -36,7 +36,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRecursiveResolveWithGraphScope() {
+    func testRecursiveResolutionWithGraphScope() {
         // Arrange
         Resolver.register() { _ in Service1() }
         Resolver.register() { resolver in
@@ -53,7 +53,7 @@ final class ResolverTests: XCTestCase {
         XCTAssertNotNil(service)
     }
 
-    func testRegisterAndResolve() {
+    func testServiceWithAllScopes() {
         // Arrange
         let type = Service1.self
         var name = String(describing: type)
@@ -79,7 +79,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithOneArgument() {
+    func testServiceWithOneArgument() {
         // Arrange
         let type = ServiceWithOneArgument.self
         var name = String(describing: type)
@@ -98,7 +98,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithTwoArguments() {
+    func testServiceWithTwoArguments() {
         // Arrange
         let type = ServiceWithTwoArguments.self
         var name = String(describing: type)
@@ -120,7 +120,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithThreeArguments() {
+    func testServiceWithThreeArguments() {
         // Arrange
         let type = ServiceWithThreeArguments.self
         var name = String(describing: type)
@@ -143,7 +143,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithFourArguments() {
+    func testServiceWithFourArguments() {
         // Arrange
         let type = ServiceWithFourArguments.self
         var name = String(describing: type)
@@ -167,7 +167,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithFiveArguments() {
+    func testServiceWithFiveArguments() {
         // Arrange
         let type = ServiceWithFiveArguments.self
         var name = String(describing: type)
@@ -192,7 +192,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithSixArguments() {
+    func testServiceWithSixArguments() {
         // Arrange
         let type = ServiceWithSixArguments.self
         var name = String(describing: type)
@@ -218,7 +218,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithSevenArguments() {
+    func testServiceWithSevenArguments() {
         // Arrange
         let type = ServiceWithSevenArguments.self
         var name = String(describing: type)
@@ -253,7 +253,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithEightArguments() {
+    func testServiceWithEightArguments() {
         // Arrange
         let type = ServiceWithEightArguments.self
         var name = String(describing: type)
@@ -294,7 +294,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithNineArguments() {
+    func testServiceWithNineArguments() {
         // Arrange
         let type = ServiceWithNineArguments.self
         var name = String(describing: type)
@@ -338,7 +338,7 @@ final class ResolverTests: XCTestCase {
         }
     }
 
-    func testRegisterAndResolveWithTenArguments() {
+    func testServiceWithTenArguments() {
         // Arrange
         let type = ServiceWithTenArguments.self
         var name = String(describing: type)

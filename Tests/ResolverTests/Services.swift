@@ -257,3 +257,8 @@ final class InjectedService10 {
     @Injected(arguments: "string", 1, Float(2.5), 3.2, true, Character("a"), UInt(4), UInt8(5), UInt16(6))
     var arg1: ServiceWithNineArguments
 }
+
+final class InjectedService11 {
+    @Injected(arguments: "string", 1, Float(2.5), 3.2, true, Character("a"), UInt(4), UInt8(5), UInt16(6), UInt32(7))
+    var arg1: ServiceWithTenArguments
+}

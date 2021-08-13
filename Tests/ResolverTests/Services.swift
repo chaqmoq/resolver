@@ -271,3 +271,8 @@ final class OptionalInjectedService2 {
     @OptionalInjected(arguments: "string")
     var arg1: ServiceWithOneArgument?
 }
+
+final class OptionalInjectedService3 {
+    @OptionalInjected(arguments: "string", 1)
+    var arg1: ServiceWithTwoArguments?
+}

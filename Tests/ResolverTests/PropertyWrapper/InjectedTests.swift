@@ -87,4 +87,17 @@ final class InjectedTests: XCTestCase {
         // Assert
         XCTAssertTrue(type(of: injectedService.arg1) == ServiceWithFourArguments.self)
     }
+
+    func testServiceWithFiveArguments() {
+        // Arrange
+        Resolver.register { resolver, arg1, arg2, arg3, arg4, arg5 in
+            ServiceWithFiveArguments(arg1: arg1, arg2: arg2, arg3: arg3, arg4: arg4, arg5: arg5)
+        }
+
+        // Act
+        let injectedService = InjectedService6()
+
+        // Assert
+        XCTAssertTrue(type(of: injectedService.arg1) == ServiceWithFiveArguments.self)
+    }
 }

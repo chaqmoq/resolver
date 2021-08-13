@@ -232,3 +232,8 @@ final class InjectedService5 {
     @Injected(arguments: "string", 1, Float(2.5), 3.2)
     var arg1: ServiceWithFourArguments
 }
+
+final class InjectedService6 {
+    @Injected(arguments: "string", 1, Float(2.5), 3.2, true)
+    var arg1: ServiceWithFiveArguments
+}

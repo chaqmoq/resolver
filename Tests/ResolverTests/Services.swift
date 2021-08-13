@@ -296,3 +296,8 @@ final class OptionalInjectedService7 {
     @OptionalInjected(arguments: "string", 1, Float(2.5), 3.2, true, Character("a"))
     var arg1: ServiceWithSixArguments?
 }
+
+final class OptionalInjectedService8 {
+    @OptionalInjected(arguments: "string", 1, Float(2.5), 3.2, true, Character("a"), UInt(4))
+    var arg1: ServiceWithSevenArguments?
+}

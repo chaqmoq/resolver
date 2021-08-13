@@ -19,6 +19,39 @@ final class ResolverTests: XCTestCase {
         Resolver.main = .init()
     }
 
+    func testThreadSafety() {
+        // Arrange
+        let group = DispatchGroup()
+        let type = Service1.self
+        let name = String(describing: type)
+        let scope: Scope = .graph
+        let max: UInt32 = 1000
+
+        // Act
+        for _ in 0...max {
+            group.enter()
+            DispatchQueue.global().async {
+                let sleep = arc4random() % max
+                usleep(sleep)
+
+                Resolver.register(type, named: name, scoped: scope) { _ in Service1() }
+                let service1 = Resolver.resolve(type, named: name)
+                let service2 = Resolver.resolve(type, named: name)
+
+                // Assert
+                XCTAssertNotNil(service1)
+                XCTAssertNotNil(service2)
+
+                group.leave()
+            }
+        }
+
+        let result = group.wait(timeout: DispatchTime.now() + 5)
+
+        // Assert
+        XCTAssert(result == .success)
+    }
+
     func testResolutionFailureWithoutRegistration() {
         // Arrange
         let type = Service1.self

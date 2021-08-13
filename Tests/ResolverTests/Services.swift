@@ -318,3 +318,7 @@ final class OptionalInjectedService11 {
     )
     var arg1: ServiceWithTenArguments?
 }
+
+final class LazyInjectedService1 {
+    @LazyInjected var arg1: Service1
+}

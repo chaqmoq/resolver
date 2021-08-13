@@ -208,3 +208,7 @@ final class ServiceWithTenArguments {
         self.arg10 = arg10
     }
 }
+
+final class InjectedService1 {
+    @Injected var arg1: Service1
+}

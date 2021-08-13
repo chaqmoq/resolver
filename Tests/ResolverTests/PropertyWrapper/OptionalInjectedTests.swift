@@ -39,4 +39,15 @@ final class OptionalInjectedTests: XCTestCase {
         XCTAssertTrue(type(of: injectedService.arg1) == Service1?.self)
         XCTAssertTrue(injectedService.arg1 === arg1)
     }
+
+    func testServiceWithOneArgument() {
+        // Arrange
+        Resolver.register { resolver, arg1 in ServiceWithOneArgument(arg1: arg1) }
+
+        // Act
+        let injectedService = OptionalInjectedService2()
+
+        // Assert
+        XCTAssertTrue(type(of: injectedService.arg1) == ServiceWithOneArgument?.self)
+    }
 }

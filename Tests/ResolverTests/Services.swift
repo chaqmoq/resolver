@@ -322,3 +322,7 @@ final class OptionalInjectedService11 {
 final class LazyInjectedService1 {
     @LazyInjected var arg1: Service1
 }
+
+final class WeakLazyInjectedService1 {
+    @WeakLazyInjected var arg1: Service1?
+}

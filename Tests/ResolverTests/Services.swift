@@ -217,3 +217,8 @@ final class InjectedService2 {
     @Injected(arguments: "string")
     var arg1: ServiceWithOneArgument
 }
+
+final class InjectedService3 {
+    @Injected(arguments: "string", 1)
+    var arg1: ServiceWithTwoArguments
+}

@@ -31,7 +31,7 @@ final class ResolverTests: XCTestCase {
         for _ in 0...max {
             group.enter()
             DispatchQueue.global().async {
-                let sleep = arc4random() % max
+                let sleep = UInt32.random(in: 0...max)
                 usleep(sleep)
 
                 Resolver.register(type, named: name, scoped: scope) { _ in Service1() }

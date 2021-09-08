@@ -1,5 +1,7 @@
+/// Injects and resolves a service when accessed for the first time and deallocates it when there is no strong reference to it.
 @propertyWrapper
 public struct WeakLazyInjected<Service: AnyObject> {
+    /// A wrapped value.
     public var wrappedValue: Service? {
         mutating get {
             if resolver.isAtomic {
@@ -25,6 +27,11 @@ public struct WeakLazyInjected<Service: AnyObject> {
     private let name: String?
     private weak var service: Service?
 
+    /// Initializes a new instance of a service lazily.
+    ///
+    /// - Parameters:
+    ///   - resolver: An instance of `Resolver`.  Defaults to `main`.
+    ///   - name: The name of a service. Defaults to `nil`.
     public init(resolver: Resolver = .main, name: String? = nil) {
         self.resolver = resolver
         self.name = name

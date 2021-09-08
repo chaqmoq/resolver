@@ -1,5 +1,3 @@
-import Foundation
-
 @propertyWrapper
 public struct LazyInjected<Service> {
     public var wrappedValue: Service {

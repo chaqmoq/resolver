@@ -1,4 +1,5 @@
-@propertyWrapper public struct Injected<Service> {
+@propertyWrapper
+public struct Injected<Service> {
     public var wrappedValue: Service {
         get { service }
         set {

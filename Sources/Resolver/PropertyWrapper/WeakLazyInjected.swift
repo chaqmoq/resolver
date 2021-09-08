@@ -1,4 +1,5 @@
-@propertyWrapper public struct WeakLazyInjected<Service: AnyObject> {
+@propertyWrapper
+public struct WeakLazyInjected<Service: AnyObject> {
     public var wrappedValue: Service? {
         mutating get {
             if resolver.isAtomic {

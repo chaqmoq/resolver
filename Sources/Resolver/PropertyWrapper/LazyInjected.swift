@@ -1,6 +1,7 @@
 import Foundation
 
-@propertyWrapper public struct LazyInjected<Service> {
+@propertyWrapper
+public struct LazyInjected<Service> {
     public var wrappedValue: Service {
         mutating get {
             if resolver.isAtomic {

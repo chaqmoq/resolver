@@ -1,4 +1,5 @@
-@propertyWrapper public struct OptionalInjected<Service> {
+@propertyWrapper
+public struct OptionalInjected<Service> {
     public var wrappedValue: Service? {
         get { service }
         set {

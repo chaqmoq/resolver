@@ -42,7 +42,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithOneArgument() {
         // Arrange
-        Resolver.register { resolver, arg1 in ServiceWithOneArgument(arg1: arg1) }
+        Resolver.register { _, arg1 in ServiceWithOneArgument(arg1: arg1) }
 
         // Act
         let injectedService = OptionalInjectedService2()
@@ -53,7 +53,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithTwoArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2 in ServiceWithTwoArguments(arg1: arg1, arg2: arg2) }
+        Resolver.register { _, arg1, arg2 in ServiceWithTwoArguments(arg1: arg1, arg2: arg2) }
 
         // Act
         let injectedService = OptionalInjectedService3()
@@ -64,7 +64,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithThreeArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3 in
+        Resolver.register { _, arg1, arg2, arg3 in
             ServiceWithThreeArguments(arg1: arg1, arg2: arg2, arg3: arg3)
         }
 
@@ -77,7 +77,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithFourArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3, arg4 in
+        Resolver.register { _, arg1, arg2, arg3, arg4 in
             ServiceWithFourArguments(arg1: arg1, arg2: arg2, arg3: arg3, arg4: arg4)
         }
 
@@ -90,7 +90,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithFiveArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3, arg4, arg5 in
+        Resolver.register { _, arg1, arg2, arg3, arg4, arg5 in
             ServiceWithFiveArguments(arg1: arg1, arg2: arg2, arg3: arg3, arg4: arg4, arg5: arg5)
         }
 
@@ -103,7 +103,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithSixArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3, arg4, arg5, arg6 in
+        Resolver.register { _, arg1, arg2, arg3, arg4, arg5, arg6 in
             ServiceWithSixArguments(arg1: arg1, arg2: arg2, arg3: arg3, arg4: arg4, arg5: arg5, arg6: arg6)
         }
 
@@ -116,7 +116,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithSevenArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7 in
+        Resolver.register { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7 in
             ServiceWithSevenArguments(
                 arg1: arg1,
                 arg2: arg2,
@@ -137,7 +137,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithEightArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 in
+        Resolver.register { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 in
             ServiceWithEightArguments(
                 arg1: arg1,
                 arg2: arg2,
@@ -159,7 +159,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithNineArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9 in
+        Resolver.register { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9 in
             ServiceWithNineArguments(
                 arg1: arg1,
                 arg2: arg2,
@@ -182,7 +182,7 @@ final class OptionalInjectedTests: XCTestCase {
 
     func testServiceWithTenArguments() {
         // Arrange
-        Resolver.register { resolver, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 in
+        Resolver.register { _, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 in
             ServiceWithTenArguments(
                 arg1: arg1,
                 arg2: arg2,

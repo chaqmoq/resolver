@@ -28,10 +28,10 @@ final class ResolverTests: XCTestCase {
         let max: UInt32 = 1000
 
         // Act
-        for _ in 0...max {
+        for _ in 0 ... max {
             group.enter()
             DispatchQueue.global().async {
-                let sleep = UInt32.random(in: 0...max)
+                let sleep = UInt32.random(in: 0 ... max)
                 usleep(sleep)
 
                 Resolver.register(type, named: name, scoped: scope) { _ in Service1() }
@@ -71,11 +71,11 @@ final class ResolverTests: XCTestCase {
 
     func testRecursiveResolutionWithGraphScope() {
         // Arrange
-        Resolver.register() { _ in Service1() }
-        Resolver.register() { resolver in
+        Resolver.register { _ in Service1() }
+        Resolver.register { resolver in
             Service2(arg1: resolver.resolve(Service1.self)!)
         }
-        Resolver.register() { resolver in
+        Resolver.register { resolver in
             Service3(arg1: resolver.resolve(Service2.self)!)
         }
 

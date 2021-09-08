@@ -117,10 +117,7 @@ extension Resolver {
         case .shared:
             if let service = sharedServices[key]?.service { return service as? Service }
             let service = factory(arguments)
-
-            if type(of: service) is AnyClass {
-                sharedServices[key] = WeakService(service as AnyObject)
-            }
+            if type(of: service) is AnyClass { sharedServices[key] = WeakService(service as AnyObject) }
 
             return service
         case .singleton:

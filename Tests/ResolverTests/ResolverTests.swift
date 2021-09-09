@@ -16,7 +16,7 @@ final class ResolverTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        Resolver.main = .init()
+        Resolver.main.reset()
     }
 
     func testThreadSafety() {

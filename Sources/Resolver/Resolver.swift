@@ -68,6 +68,20 @@ extension Resolver {
         return self
     }
 
+    /// Resets the main `Resolver` and removes all registered services.
+    public func reset() {
+        isAtomic ? lock.sync { performReset() } : performReset()
+    }
+
+    private func performReset() {
+        Resolver.main = .init()
+        registrations.removeAll()
+        cachedServices.clear()
+        graphServices.removeAll()
+        sharedServices.removeAll()
+        singletonServices.removeAll()
+    }
+
     @discardableResult
     func doRegister<Service, Arguments>(
         _ type: Service.Type = Service.self,

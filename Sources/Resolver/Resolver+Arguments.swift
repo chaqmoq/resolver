@@ -4,7 +4,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -22,7 +22,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -40,7 +40,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -58,7 +58,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -76,7 +76,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -94,7 +94,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -112,7 +112,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -130,7 +130,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -148,7 +148,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -166,7 +166,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The main `Resolver`.
     @discardableResult
@@ -186,7 +186,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -205,7 +205,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -224,7 +224,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -243,7 +243,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -262,7 +262,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -281,7 +281,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -300,7 +300,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -319,7 +319,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -338,7 +338,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
@@ -357,7 +357,7 @@ extension Resolver {
     /// - Parameters:
     ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
     ///   - name: The name of a service. Defaults to `nil`.
-    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - scope: The scope of a service. Defaults to `defaultScope`.
     ///   - factory: A factory method that creates a new instance of a service.
     /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult

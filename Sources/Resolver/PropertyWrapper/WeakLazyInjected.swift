@@ -1,4 +1,4 @@
-/// Injects and resolves a service when accessed for the first time and deallocates it when there is no strong reference to it.
+/// Injects and resolves an optional service when accessed for the first time and deallocates it when there is no strong reference left to it.
 @propertyWrapper
 public struct WeakLazyInjected<Service: AnyObject> {
     /// A wrapped value.

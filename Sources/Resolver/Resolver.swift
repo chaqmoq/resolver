@@ -1,8 +1,16 @@
 import Foundation
 
+/// A dependency injection registry that registers and resolves services.
 public final class Resolver {
+    /// The main `Resolver`.
     public static var main = Resolver()
+
+    /// The default scope `graph`.
     public static var defaultScope: Scope = .graph
+
+    /// A boolean value to indicate whether to ensure thread safety while registering and resolving services or not. Defaults to `true` that means
+    /// thread-safe. Sometimes, it is better to set it to `false` in a single-threaded environment or for services that are only going to be used in a single
+    /// thread such as UI thread for performance reasons.
     public var isAtomic: Bool
 
     let lock = RecursiveLock()
@@ -13,12 +21,24 @@ public final class Resolver {
     private var singletonServices: [ServiceKey: Any] = .init()
     private var resolutionDepth = 0
 
+    /// Initializes a new instance of `Resolver`.
+    ///
+    /// - Parameter isAtomic: A boolean value to indicate whether to ensure thread safety while registering and resolving services or not. Defaults to
+    /// `true` that means thread-safe.
     public init(isAtomic: Bool = true) {
         self.isAtomic = isAtomic
     }
 }
 
 extension Resolver {
+    /// Registers a service in the main `Resolver`.
+    /// 
+    /// - Parameters:
+    ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
+    ///   - name: The name of a service. Defaults to `nil`.
+    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - factory: A factory method that creates a new instance of a service.
+    /// - Returns: The main `Resolver`.
     @discardableResult
     public static func register<Service>(
         _ type: Service.Type = Service.self,
@@ -29,6 +49,14 @@ extension Resolver {
         main.register(type, named: name, scoped: scope, factory: factory)
     }
 
+    /// Registers a service.
+    ///
+    /// - Parameters:
+    ///   - type: The type of a service. Defaults to the concrete type that is going to be initialized.
+    ///   - name: The name of a service. Defaults to `nil`.
+    ///   - scope: The scope of a service. Defaults to `graph`.
+    ///   - factory: A factory method that creates a new instance of a service.
+    /// - Returns: The current instance of `Resolver` registering a service.
     @discardableResult
     public func register<Service>(
         _ type: Service.Type = Service.self,
@@ -68,10 +96,22 @@ extension Resolver {
 }
 
 extension Resolver {
+    /// Resolves a service registered in the main `Resolver`.
+    ///
+    /// - Parameters:
+    ///   - type: The type of a service. Defaults to the type inferred from the return type.
+    ///   - name: The name of a service. Defaults to `nil`.
+    /// - Returns: An instance of a registered service or `nil` if it is not registered.
     public static func resolve<Service>(_ type: Service.Type = Service.self, named name: String? = nil) -> Service? {
         main.resolve(type, named: name)
     }
 
+    /// Resolves a service.
+    ///
+    /// - Parameters:
+    ///   - type: The type of a service. Defaults to the type inferred from the return type.
+    ///   - name: The name of a service. Defaults to `nil`.
+    /// - Returns: An instance of a registered service or `nil` if it is not registered.
     public func resolve<Service>(_ type: Service.Type = Service.self, named name: String? = nil) -> Service? {
         doResolve(type, named: name, arguments: self)
     }

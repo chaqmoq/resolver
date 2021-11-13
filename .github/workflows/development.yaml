@@ -19,7 +19,7 @@ jobs:
       uses: sukhrobkhakimov/publish-jazzy-docs@v1
       with:
         personal_access_token: ${{ secrets.ACCESS_TOKEN }}
-        args: "--theme fullwidth"
+        args: "--module Resolver --theme fullwidth --root-url https://chaqmoq.dev/resolver --source-host github --source-host-url https://github.com/chaqmoq/resolver"
   ubuntu-bionic:
     runs-on: ubuntu-latest
     container:

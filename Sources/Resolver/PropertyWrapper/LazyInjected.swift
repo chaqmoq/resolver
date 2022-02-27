@@ -30,7 +30,7 @@ public struct LazyInjected<Service> {
     /// Initializes a new instance of a service lazily.
     ///
     /// - Parameters:
-    ///   - resolver: An instance of `Resolver`.  Defaults to `main`.
+    ///   - resolver: An instance of `Resolver`. Defaults to `main`.
     ///   - name: The name of a service. Defaults to `nil`.
     public init(resolver: Resolver = .main, name: String? = nil) {
         self.resolver = resolver

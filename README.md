@@ -11,5 +11,5 @@
         <a href="https://github.com/chaqmoq/resolver/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributing-guide-brightgreen.svg" /></a>
         <a href="https://t.me/chaqmoqdev"><img src="https://img.shields.io/badge/telegram-chaqmoqdev-brightgreen.svg" /></a>
     </p>
-    <p>A dependency injection framework written in <a href="https://swift.org">Swift</a> language. This is one of the core packages of <a href="https://chaqmoq.dev">Chaqmoq</a>. Read the <a href="https://docs.chaqmoq.dev">documentation</a> for more info.</p>
+    <p>A dependency injection library written in <a href="https://swift.org">Swift</a> language. This is one of the core packages of <a href="https://chaqmoq.dev">Chaqmoq</a>. Read the <a href="https://docs.chaqmoq.dev">documentation</a> for more info.</p>
 </div>

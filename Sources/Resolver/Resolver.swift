@@ -15,11 +15,11 @@ public final class Resolver {
     public var isAtomic: Bool
 
     let lock = RecursiveLock()
-    private var registrations: [ServiceKey: ServiceRegistration] = .init()
-    private var cachedServices: Cache<ServiceKey, Any> = .init()
-    private var graphServices: [ServiceKey: Any] = .init()
-    private var sharedServices: [ServiceKey: WeakService] = .init()
-    private var singletonServices: [ServiceKey: Any] = .init()
+    private var registrations = [ServiceKey: ServiceRegistration]()
+    private var cachedServices = Cache<ServiceKey, Any>()
+    private var graphServices = [ServiceKey: Any]()
+    private var sharedServices = [ServiceKey: WeakService]()
+    private var singletonServices = [ServiceKey: Any]()
     private var resolutionDepth = 0
 
     /// Initializes a new instance of `Resolver`.

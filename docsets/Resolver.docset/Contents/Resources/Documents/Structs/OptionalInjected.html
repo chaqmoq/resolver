@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OptionalInjected Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Struct/OptionalInjected" class="dashAnchor"></a>
+
+    <a title="OptionalInjected Structure Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Resolver Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/chaqmoq/resolver">
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fchaqmoq.dev%2Fresolver%2Fdocsets%2FResolver.xml">
+            <img class="header-icon" src="../img/dash.png" alt="Dash"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Resolver</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      <a class="breadcrumb" href="../Structs.html">Structures</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      OptionalInjected Structure Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Resolver.html">Resolver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Scope.html">Scope</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Injected.html">Injected</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LazyInjected.html">LazyInjected</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/OptionalInjected.html">OptionalInjected</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/WeakLazyInjected.html">WeakLazyInjected</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>OptionalInjected</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@propertyWrapper</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">OptionalInjected</span><span class="o">&lt;</span><span class="kt">Service</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Injects and resolves an optional service immediately.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV12wrappedValuexSgvp"></a>
+                    <a name="//apple_ref/swift/Property/wrappedValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV12wrappedValuexSgvp">wrappedValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A wrapped value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">wrappedValue</span><span class="p">:</span> <span class="kt">Service</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4nameACyxGA2AC_SSSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4nameACyxGA2AC_SSSgtcfc">init(resolver:<wbr>name:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9argumentsACyxGA2AC_SSSgqd__tclufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9argumentsACyxGA2AC_SSSgqd__tclufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with one argument.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments_ACyxGA2AC_SSSgqd__qd_0_tcr0_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments_ACyxGA2AC_SSSgqd__qd_0_tcr0_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with two arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments__ACyxGA2AC_SSSgqd__qd_0_qd_1_tcr1_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments__ACyxGA2AC_SSSgqd__qd_0_qd_1_tcr1_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with three arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments___ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_tcr2_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments___ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_tcr2_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with four arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="kt">Arg4</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg4</span><span class="p">:</span> <span class="kt">Arg4</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg4</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fourth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments____ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_tcr3_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments____ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_tcr3_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with five arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="kt">Arg5</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg4</span><span class="p">:</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg5</span><span class="p">:</span> <span class="kt">Arg5</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg4</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fourth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg5</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fifth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments_____ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_tcr4_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments_____ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_tcr4_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with six arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="kt">Arg6</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg4</span><span class="p">:</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg5</span><span class="p">:</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg6</span><span class="p">:</span> <span class="kt">Arg6</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg4</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fourth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg5</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fifth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg6</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sixth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments______ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_tcr5_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments______ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_tcr5_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with seven arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="kt">Arg7</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg4</span><span class="p">:</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg5</span><span class="p">:</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg6</span><span class="p">:</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg7</span><span class="p">:</span> <span class="kt">Arg7</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg4</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fourth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg5</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fifth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg6</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sixth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg7</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The seventh argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments_______ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_qd_6_tcr6_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:_:_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments_______ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_qd_6_tcr6_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with eight arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="kt">Arg7</span><span class="p">,</span> <span class="kt">Arg8</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg4</span><span class="p">:</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg5</span><span class="p">:</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg6</span><span class="p">:</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg7</span><span class="p">:</span> <span class="kt">Arg7</span><span class="p">,</span>
+    <span class="n">_</span> <span class="nv">arg8</span><span class="p">:</span> <span class="kt">Arg8</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg4</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fourth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg5</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fifth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg6</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sixth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg7</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The seventh argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg8</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The eighth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments________ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_qd_6_qd_7_tcr7_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:_:_:_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments________ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_qd_6_qd_7_tcr7_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with nine arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="kt">Arg7</span><span class="p">,</span> <span class="kt">Arg8</span><span class="p">,</span> <span class="kt">Arg9</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg4</span><span class="p">:</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg5</span><span class="p">:</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg6</span><span class="p">:</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg7</span><span class="p">:</span> <span class="kt">Arg7</span><span class="p">,</span>
+    <span class="n">_</span> <span class="nv">arg8</span><span class="p">:</span> <span class="kt">Arg8</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg9</span><span class="p">:</span> <span class="kt">Arg9</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg4</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fourth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg5</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fifth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg6</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sixth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg7</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The seventh argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg8</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The eighth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg9</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ninth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Resolver16OptionalInjectedV8resolver4name9arguments_________ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_qd_6_qd_7_qd_8_tcr8_lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(resolver:name:arguments:_:_:_:_:_:_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Resolver16OptionalInjectedV8resolver4name9arguments_________ACyxGA2AC_SSSgqd__qd_0_qd_1_qd_2_qd_3_qd_4_qd_5_qd_6_qd_7_qd_8_tcr8_lufc">init(resolver:<wbr>name:<wbr>arguments:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new instance of a service with ten arguments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">Arg1</span><span class="p">,</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="kt">Arg7</span><span class="p">,</span> <span class="kt">Arg8</span><span class="p">,</span> <span class="kt">Arg9</span><span class="p">,</span> <span class="kt">Arg10</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">resolver</span><span class="p">:</span> <span class="kt"><a href="../Classes/Resolver.html">Resolver</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="n">arguments</span> <span class="nv">arg1</span><span class="p">:</span> <span class="kt">Arg1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg2</span><span class="p">:</span> <span class="kt">Arg2</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg3</span><span class="p">:</span> <span class="kt">Arg3</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg4</span><span class="p">:</span> <span class="kt">Arg4</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg5</span><span class="p">:</span> <span class="kt">Arg5</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg6</span><span class="p">:</span> <span class="kt">Arg6</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg7</span><span class="p">:</span> <span class="kt">Arg7</span><span class="p">,</span>
+    <span class="n">_</span> <span class="nv">arg8</span><span class="p">:</span> <span class="kt">Arg8</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg9</span><span class="p">:</span> <span class="kt">Arg9</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arg10</span><span class="p">:</span> <span class="kt">Arg10</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolver</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="../Classes/Resolver.html">Resolver</a></code>. Defaults to <code>main</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of a service. Defaults to <code>nil</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The first argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The second argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg3</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The third argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg4</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fourth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg5</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fifth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg6</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sixth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg7</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The seventh argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg8</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The eighth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg9</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ninth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arg10</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The tenth argument of a service.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-08-27)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>

@@ -14,7 +14,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with two arguments.
@@ -32,7 +37,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with three arguments.
@@ -50,7 +60,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with four arguments.
@@ -68,7 +83,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with five arguments.
@@ -86,7 +106,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with six arguments.
@@ -104,7 +129,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with seven arguments.
@@ -122,7 +152,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with eight arguments.
@@ -140,7 +175,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with nine arguments.
@@ -158,7 +198,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service with ten arguments.
@@ -176,7 +221,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 }
 
@@ -196,7 +246,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -215,7 +270,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -234,7 +294,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -253,7 +318,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -272,7 +342,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -291,7 +366,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -310,7 +390,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -329,7 +414,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -348,7 +438,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -367,7 +462,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 }
@@ -385,7 +485,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1
+        )
     }
 
     /// Resolves a service with two arguments registered in the main `Resolver`.
@@ -401,7 +505,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2
+        )
     }
 
     /// Resolves a service with three arguments registered in the main `Resolver`.
@@ -418,7 +526,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3
+        )
     }
 
     /// Resolves a service with four arguments registered in the main `Resolver`.
@@ -436,7 +548,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3, arg4
+        )
     }
 
     /// Resolves a service with five arguments registered in the main `Resolver`.
@@ -455,7 +571,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3, arg4, arg5
+        )
     }
 
     /// Resolves a service with six arguments registered in the main `Resolver`.
@@ -475,7 +595,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3, arg4, arg5, arg6
+        )
     }
 
     /// Resolves a service with seven arguments registered in the main `Resolver`.
@@ -496,7 +620,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7
+        )
     }
 
     /// Resolves a service with eight arguments registered in the main `Resolver`.
@@ -519,7 +647,11 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8
+        )
     }
 
     /// Resolves a service with nine arguments registered in the main `Resolver`.
@@ -543,7 +675,11 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8, _ arg9: Arg9
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9
+        )
     }
 
     /// Resolves a service with ten arguments registered in the main `Resolver`.
@@ -568,7 +704,11 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8, _ arg9: Arg9, _ arg10: Arg10
     ) -> Service? {
-        main.resolve(type, named: name, arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
+        main.resolve(
+            type,
+            named: name,
+            arguments: arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10
+        )
     }
 }
 
@@ -585,7 +725,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1)
+        )
     }
 
     /// Resolves a service with two arguments.
@@ -601,7 +745,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2)
+        )
     }
 
     /// Resolves a service with three arguments.
@@ -618,7 +766,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2, arg3))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2, arg3)
+        )
     }
 
     /// Resolves a service with four arguments.
@@ -636,7 +788,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2, arg3, arg4))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2, arg3, arg4)
+        )
     }
 
     /// Resolves a service with five arguments.
@@ -655,7 +811,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2, arg3, arg4, arg5))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2, arg3, arg4, arg5)
+        )
     }
 
     /// Resolves a service with six arguments.
@@ -675,7 +835,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6)
+        )
     }
 
     /// Resolves a service with seven arguments.
@@ -696,7 +860,11 @@ extension Resolver {
         named name: String? = nil,
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
+        )
     }
 
     /// Resolves a service with eight arguments.
@@ -719,7 +887,11 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
+        )
     }
 
     /// Resolves a service with nine arguments.
@@ -743,7 +915,11 @@ extension Resolver {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6, _ arg7: Arg7,
         _ arg8: Arg8, _ arg9: Arg9
     ) -> Service? {
-        doResolve(type, named: name, arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9))
+        doResolve(
+            type,
+            named: name,
+            arguments: (self, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9)
+        )
     }
 
     /// Resolves a service with ten arguments.

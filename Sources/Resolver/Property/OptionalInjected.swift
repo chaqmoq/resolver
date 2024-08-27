@@ -21,9 +21,15 @@ public struct OptionalInjected<Service> {
     /// - Parameters:
     ///   - resolver: An instance of `Resolver`. Defaults to `main`.
     ///   - name: The name of a service. Defaults to `nil`.
-    public init(resolver: Resolver = .main, name: String? = nil) {
+    public init(
+        resolver: Resolver = .main,
+        name: String? = nil
+    ) {
         self.resolver = resolver
-        service = resolver.resolve(Service.self, named: name)
+        service = resolver.resolve(
+            Service.self,
+            named: name
+        )
     }
 
     /// Initializes a new instance of a service with one argument.
@@ -32,9 +38,17 @@ public struct OptionalInjected<Service> {
     ///   - resolver: An instance of `Resolver`. Defaults to `main`.
     ///   - name: The name of a service. Defaults to `nil`.
     ///   - arg1: The first argument of a service.
-    public init<Arg1>(resolver: Resolver = .main, name: String? = nil, arguments arg1: Arg1) {
+    public init<Arg1>(
+        resolver: Resolver = .main,
+        name: String? = nil,
+        arguments arg1: Arg1
+    ) {
         self.resolver = resolver
-        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1))
+        service = resolver.doResolve(
+            Service.self,
+            named: name,
+            arguments: (resolver, arg1)
+        )
     }
 
     /// Initializes a new instance of a service with two arguments.
@@ -44,9 +58,17 @@ public struct OptionalInjected<Service> {
     ///   - name: The name of a service. Defaults to `nil`.
     ///   - arg1: The first argument of a service.
     ///   - arg2: The second argument of a service.
-    public init<Arg1, Arg2>(resolver: Resolver = .main, name: String? = nil, arguments arg1: Arg1, _ arg2: Arg2) {
+    public init<Arg1, Arg2>(
+        resolver: Resolver = .main,
+        name: String? = nil,
+        arguments arg1: Arg1, _ arg2: Arg2
+    ) {
         self.resolver = resolver
-        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1, arg2))
+        service = resolver.doResolve(
+            Service.self,
+            named: name,
+            arguments: (resolver, arg1, arg2)
+        )
     }
 
     /// Initializes a new instance of a service with three arguments.
@@ -63,7 +85,11 @@ public struct OptionalInjected<Service> {
         arguments arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3
     ) {
         self.resolver = resolver
-        service = resolver.doResolve(Service.self, named: name, arguments: (resolver, arg1, arg2, arg3))
+        service = resolver.doResolve(
+            Service.self,
+            named: name,
+            arguments: (resolver, arg1, arg2, arg3)
+        )
     }
 
     /// Initializes a new instance of a service with four arguments.

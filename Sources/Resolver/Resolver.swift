@@ -8,9 +8,10 @@ public final class Resolver {
     /// The default scope `graph`.
     public static var defaultScope: Scope = .graph
 
-    /// A boolean value to indicate whether to ensure thread safety while registering and resolving services or not. Defaults to `true` that means
-    /// thread-safe. Sometimes, it is better to set it to `false` in a single-threaded environment or for services that are only going to be used in a single
-    /// thread such as UI thread for performance reasons.
+    /// A boolean value to indicate whether to ensure thread safety while registering and resolving services or not.
+    /// Defaults to `true` that means thread-safe. Sometimes, it is better to set it to `false` in a single-threaded
+    /// environment or for services that are only going to be used in a single thread such as UI thread for performance
+    /// reasons.
     public var isAtomic: Bool
 
     let lock = RecursiveLock()
@@ -23,8 +24,8 @@ public final class Resolver {
 
     /// Initializes a new instance of `Resolver`.
     ///
-    /// - Parameter isAtomic: A boolean value to indicate whether to ensure thread safety while registering and resolving services or not. Defaults to
-    /// `true` that means thread-safe.
+    /// - Parameter isAtomic: A boolean value to indicate whether to ensure thread safety while registering and
+    /// resolving services or not. Defaults to `true` that means thread-safe.
     public init(isAtomic: Bool = true) {
         self.isAtomic = isAtomic
     }
@@ -46,7 +47,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver) -> Service
     ) -> Resolver {
-        main.register(type, named: name, scoped: scope, factory: factory)
+        main.register(
+            type, 
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     /// Registers a service.
@@ -64,7 +70,12 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Resolver) -> Service
     ) -> Self {
-        doRegister(type, named: name, scoped: scope, factory: factory)
+        doRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
         return self
     }
 
@@ -90,8 +101,20 @@ extension Resolver {
         factory: @escaping (Arguments) -> Service
     ) -> Self {
         isAtomic
-            ? lock.sync { performRegister(type, named: name, scoped: scope, factory: factory) }
-            : performRegister(type, named: name, scoped: scope, factory: factory)
+        ? lock.sync {
+            performRegister(
+                type,
+                named: name,
+                scoped: scope,
+                factory: factory
+            )
+        }
+        : performRegister(
+            type,
+            named: name,
+            scoped: scope,
+            factory: factory
+        )
     }
 
     @discardableResult
@@ -101,8 +124,15 @@ extension Resolver {
         scoped scope: Scope = defaultScope,
         factory: @escaping (Arguments) -> Service
     ) -> Self {
-        let key = ServiceKey(type: type, name: name, argumentsType: Arguments.self)
-        let registration = ServiceRegistration(scope: scope, factory: factory)
+        let key = ServiceKey(
+            type: type,
+            name: name,
+            argumentsType: Arguments.self
+        )
+        let registration = ServiceRegistration(
+            scope: scope,
+            factory: factory
+        )
         registrations[key] = registration
 
         return self
@@ -116,8 +146,14 @@ extension Resolver {
     ///   - type: The type of a service. Defaults to the type inferred from the return type.
     ///   - name: The name of a service. Defaults to `nil`.
     /// - Returns: An instance of a registered service or `nil` if it is not registered.
-    public static func resolve<Service>(_ type: Service.Type = Service.self, named name: String? = nil) -> Service? {
-        main.resolve(type, named: name)
+    public static func resolve<Service>(
+        _ type: Service.Type = Service.self,
+        named name: String? = nil
+    ) -> Service? {
+        main.resolve(
+            type,
+            named: name
+        )
     }
 
     /// Resolves a service.
@@ -126,8 +162,15 @@ extension Resolver {
     ///   - type: The type of a service. Defaults to the type inferred from the return type.
     ///   - name: The name of a service. Defaults to `nil`.
     /// - Returns: An instance of a registered service or `nil` if it is not registered.
-    public func resolve<Service>(_ type: Service.Type = Service.self, named name: String? = nil) -> Service? {
-        doResolve(type, named: name, arguments: self)
+    public func resolve<Service>(
+        _ type: Service.Type = Service.self,
+        named name: String? = nil
+    ) -> Service? {
+        doResolve(
+            type,
+            named: name,
+            arguments: self
+        )
     }
 
     func doResolve<Service, Arguments>(
@@ -136,8 +179,18 @@ extension Resolver {
         arguments: Arguments
     ) -> Service? {
         isAtomic
-            ? lock.sync { performResolve(type, named: name, arguments: arguments) }
-            : performResolve(type, named: name, arguments: arguments)
+        ? lock.sync {
+            performResolve(
+                type,
+                named: name,
+                arguments: arguments
+            )
+        }
+        : performResolve(
+            type,
+            named: name,
+            arguments: arguments
+        )
     }
 
     private func performResolve<Service, Arguments>(
@@ -145,15 +198,25 @@ extension Resolver {
         named name: String? = nil,
         arguments: Arguments
     ) -> Service? {
-        let key = ServiceKey(type: serviceType, name: name, argumentsType: Arguments.self)
+        let key = ServiceKey(
+            type: serviceType,
+            name: name,
+            argumentsType: Arguments.self
+        )
         guard let registration = registrations[key] else { return nil }
         guard let factory = registration.factory as? (Arguments) -> Service else { return nil }
 
         switch registration.scope {
         case .cached:
-            if let service = cachedServices.getValue(forKey: key) { return service as? Service }
+            if let service = cachedServices.getValue(forKey: key) {
+                return service as? Service
+            }
+
             let service = factory(arguments)
-            cachedServices.setValue(service, forKey: key)
+            cachedServices.setValue(
+                service,
+                forKey: key
+            )
 
             return service
         case .graph:
@@ -169,13 +232,22 @@ extension Resolver {
 
             return service
         case .shared:
-            if let service = sharedServices[key]?.service { return service as? Service }
+            if let service = sharedServices[key]?.service {
+                return service as? Service
+            }
+
             let service = factory(arguments)
-            if type(of: service) is AnyClass { sharedServices[key] = WeakService(service as AnyObject) }
+
+            if type(of: service) is AnyClass {
+                sharedServices[key] = WeakService(service as AnyObject)
+            }
 
             return service
         case .singleton:
-            if let service = singletonServices[key] { return service as? Service }
+            if let service = singletonServices[key] {
+                return service as? Service
+            }
+
             let service = factory(arguments)
             singletonServices[key] = service
 

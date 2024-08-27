@@ -13,18 +13,28 @@ final class Cache<Key: Hashable, Value> {
 
     private var cache: NSCache<NSNumber, CachedItem<Value>> = .init()
 
-    init(costLimit: Int = 0, countLimit: Int = 0) {
+    init(
+        costLimit: Int = 0,
+        countLimit: Int = 0
+    ) {
         self.costLimit = costLimit
         self.countLimit = countLimit
     }
 
-    func setValue(_ value: Value, forKey key: Key) {
+    func setValue(
+        _ value: Value,
+        forKey key: Key
+    ) {
         let key = NSNumber(value: key.hashValue)
         let item = CachedItem(value: value)
         cache.setObject(item, forKey: key)
     }
 
-    func setValue(_ value: Value, forKey key: Key, cost: Int) {
+    func setValue(
+        _ value: Value,
+        forKey key: Key,
+        cost: Int
+    ) {
         let key = NSNumber(value: key.hashValue)
         let item = CachedItem(value: value)
         cache.setObject(item, forKey: key, cost: cost)
